@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department Coordinator Profile</title>
+<style>
+    /* Reset some default browser styles */
+body, h1, h2, h3, p, ul, li, form, input, select, textarea {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set a background color and font style for the entire page */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the header */
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Style the main content area */
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Style section headings */
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Style form labels and input fields */
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Style buttons */
+button[type="submit"] {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Style table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+/* Style notifications */
+.notification {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+</style>
+</head>
+<body>
+    <header>
+        <h1>Welcome, Department Coordinator!</h1>
+    </header>
+    <main>
+        <section id="department-data">
+            <h2>Department-specific Placement Data</h2>
+            <!-- Display department-specific data here -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Placement Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Siva Rama krishna</td>
+                        <td>Placed</td>
+                    </tr>
+                    <tr>
+                        <td>Charan</td>
+                        <td>Placed</td>
+                    </tr>
+                    <tr>
+                        <td>Giribabu</td>
+                        <td>Placed</td>
+                    </tr>
+                    <tr>
+                        <td>prasad</td>
+                        <td>Placed</td>
+                    </tr>
+                    <!-- Add more data as needed -->
+                </tbody>
+            </table>
+        </section>
+        <section id="generate-reports">
+            <h2>Generate Reports</h2>
+            <form action="/generate-report" method="post">
+                <label for="passoutYear">Passout Year:</label>
+                <input type="text" id="passoutYear" name="passoutYear">
+                
+                <label for="packageCriteria">Package Criteria:</label>
+                <input type="text" id="packageCriteria" name="packageCriteria">
+                
+                <button type="submit">Generate Report</button>
+            </form>
+        </section>
+        <section id="notifications">
+            <h2>Notifications</h2>
+            <!-- Display departmental placement notifications here -->
+            <div class="notification">
+                <p>Notification 1: Departmental placement result is available.</p>
+            </div>
+            <div class="notification">
+                <p>Notification 2: Meeting scheduled for placement analysis.</p>
+            </div>
+            <!-- Add more notifications as needed -->
+        </section>
+    </main>
+</body>
+</html>

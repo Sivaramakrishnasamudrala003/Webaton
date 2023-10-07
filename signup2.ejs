@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Faculty Signup</title>
+</head><style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-color: #ffffff;
+    width: 300px;
+    height:530px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+input[type="radio"] {
+    margin-top: 5px;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+</style>
+<body><br><br><br>
+    <div class="container">
+        <h2>Faculty Signup</h2>
+        <form action="/F_login" method="POST">
+            <label for="firstName">Faculty Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+
+            <label for="id">Faculty ID:</label>
+            <input type="text" id="id" name="id" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Create Password:</label>
+            <input type="text" id="password" name="password" required>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="department">Department:</label>
+            <select id="department" name="department" required>
+                <option>Choose one</option>
+                <option>CSE</option>
+                <option>IT</option>
+                <option>AIDS</option>
+                <option>AIML</option>
+                <option>CSBS</option>
+                <option>MECH</option>
+                <option>CIVIL</option>
+                <option>EEE</option>
+                <option>ECE</option>
+            </select>
+            <input type="submit" value="Sign Up">
+        </form>
+    </div>
+</body>
+</html>

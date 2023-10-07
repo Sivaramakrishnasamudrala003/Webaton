@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        .a2{
+            width: 7cm;
+            height: 6.5cm;
+            
+        }
+        #Dept{
+            width: 4.5cm;
+            height: 0.7cm;
+            background-color: transparent;
+            border: 2px solid black;
+            border-radius: 7px;
+        }
+        input{
+            background-color: transparent;
+            border: 2px solid black;
+            border-radius: 7px;
+            height: 0.7cm ;
+            color: black;
+        }
+        .a1{
+            background-color: rgb(191, 129, 250);
+            width: 7cm;
+            height: 2.5cm;
+            border-top-right-radius: 20px;
+            border-top-left-radius: 20px;
+        }
+        .a3{
+            width: 7cm;
+            height:0.7cm;
+            background-color: rgb(191, 129, 250);
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        .a0{
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+            width: 7cm;
+            border-radius: 20px;
+            
+        }
+        h2{
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .b2{
+            width: 7cm;
+            height: 6.5cm;
+            
+        }
+        .b0{
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+            width: 7cm;
+            border-radius: 20px;
+        }
+        .b3{
+            width: 7cm;
+            height:0.7cm;
+            background-color: rgb(226, 176, 91);
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        .b1{
+            background-color: rgb(226, 176, 91);
+            width: 7cm;
+            height: 2.5cm;
+            border-top-right-radius: 20px;
+            border-top-left-radius: 20px;
+        }
+        .c1{
+            background-color: rgb(237, 101, 101);
+            width: 7cm;
+            height: 2.5cm;
+            border-top-right-radius: 20px;
+            border-top-left-radius: 20px;
+        }
+        .c3{
+            width: 7cm;
+            height:0.7cm;
+            background-color: rgb(237, 101, 101);
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        .c2{
+            width: 7cm;
+            height: 6.5cm;
+            
+        }
+        .c0{
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+            width: 7cm;
+            border-radius: 20px;
+        }
+        .main{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+        img{
+            width: 17cm;
+            height: 5cm;
+        }
+        .btn1{
+            background-image: linear-gradient(rgb(191, 129, 250),white);
+            border-radius: 5px;
+            width: 2cm;
+            height: 0.6cm;
+        }
+        .btn2{
+            background-image: linear-gradient(rgb(226, 176, 91),white);
+            border-radius: 5px;
+            width: 2cm;
+            height: 0.6cm;
+        }
+        .btn3{
+            background-image: linear-gradient(rgb(237, 101, 101),white);
+            border-radius: 5px;
+            width: 2cm;
+            height: 0.6cm;
+        }
+        body{
+            background-image: linear-gradient(to top, #a8edea 0%,#fed6e3 100%);
+        }
+
+
+    </style>
+</head>
+<body>
+    <center>
+        <div class="top">
+            <img src="https://www.coolgenerator.com/Data/Textdesign/202310/c1152d9e0472741e84c3df96b5e9d986.png">
+        </div>
+    </center><br><br><br><br>
+
+    <div class="main">
+        <center>
+            <!-- Admin Login -->
+            <div class="a0">
+                <div class="a1"><br>
+                    <h2>Admin Login</h2>
+                </div>
+                <form action="/admin_login" method="POST">
+                    <div class="a2"><br><br>
+                        <input name="email" type="text" placeholder="Email"><br><br>
+                        <input name="password" type="password" placeholder="Password"><br><br>
+                        <button class="btn1" type="submit">Login</button><br><br>
+                        <a href="/signup3">Create an account</a>
+                    </div>
+                </form>
+                <div class="a3"></div>
+            </div></center><center>
+            <!-- Faculty Login -->
+            <div class="b0">
+                <div class="b1"><br>
+                    <h2>Faculty Login</h2>
+                </div>
+                <form action="/faculty_login" method="POST">
+                    <div class="b2"><br>
+                        <input name="email" type="text" placeholder="Email"><br><br>
+                        <input name="password" type="password" placeholder="Password"><br><br>
+                        <select name="faculty_department" id="Dept">
+                            <option>Department</option>
+                            <option value="All">All</option>
+                            <option value="CSE">CSE</option>
+                            <option value="IT">IT</option>
+                            <option value="AIDS">AIDS</option>
+                            <option value="AIML">AIML</option>
+                            <option value="CSBS">CSBS</option>
+                            <option value="ECE">ECE</option>
+                            <option value="EEE">EEE</option>
+                            <option value="MECH">MECH</option>
+                            <!-- Add more department options as needed -->
+                        </select><br><br>
+                        <button class="btn2" type="submit">Login</button><br><br>
+                        <a href="/signup2">Create an account</a>
+                    </div>
+                </form>
+                <div class="b3"></div>
+            </div></center><center>
+
+            <!-- Student Login -->
+            <div class="c0">
+                <div class="c1"><br>
+                    <h2>Student Login</h2>
+                </div>
+                <form action="/student_login" method="POST">
+                    <div class="c2"><br>
+                        <input name="email" type="text" placeholder="Email"><br><br>
+                        <input name="password" type="password" placeholder="Password"><br><br>
+                        <select name="student_department" id="Dept">
+                            <option>Department</option>
+                            <option value="All">All</option>
+                            <option value="CSE">CSE</option>
+                            <option value="IT">IT</option>
+                            <option value="AIDS">AIDS</option>
+                            <option value="AIML">AIML</option>
+                            <option value="CSBS">CSBS</option>
+                            <option value="ECE">ECE</option>
+                            <option value="EEE">EEE</option>
+                            <option value="MECH">MECH</option>
+                            <!-- Add more department options as needed -->
+                        </select><br><br>
+                        <button class="btn3" type="submit">Login</button><br><br>
+                        <a href="/signup">Create an account</a>
+                    </div>
+                </form>
+                <div class="c3"></div>
+            </div>
+        </center>
+    </div><br><br><br><br><br>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Profile</title>
+    <style>
+        /* Reset some default browser styles */
+        body, h1, h2, h3, p, ul, li, form, input, select, textarea {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Set a background color and font style for the entire page */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+         th, td {
+            border: 1px solid black;
+            padding:5px;
+        }
+
+        /* Style the header */
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        /* Style the main content area */
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Style section headings */
+        h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        h3 {
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        /* Style form labels and input fields */
+        form label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        form input[type="text"],
+        form input[type="email"],
+        form select,
+        form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        /* Style buttons */
+        button[type="submit"] {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* Style file input */
+        input[type="file"] {
+            margin-bottom: 20px;
+        }
+
+        /* Style the multiple select */
+        select[multiple] {
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome, Admin!</h1>
+        <!-- Add navigation links or buttons here -->
+    </header>
+    <main>
+        <h2>Notify Placed Students</h2>
+        <form id="notification-form" action="/send-notification">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" cols="50" required></textarea><br>
+            <button type="submit">Send Notification</button>
+        </form>
+        <form action="/data" method="post" id="placement">
+            <h2>Manage Placement Data</h2>
+
+            <label for="studentName">Student Name:</label>
+            <input type="text" id="studentName" name="studentName" required><br>
+
+            <label for="studentEmail">Student Email:</label>
+            <input type="email" id="studentEmail" name="studentEmail" required><br>
+
+            <h3>Add Company Information</h3>
+            <label for="companyName">Company Name:</label>
+            <input type="text" id="companyName" name="companyName" required><br>
+
+            <label for="companyLocation">Company Location:</label>
+            <input type="text" id="companyLocation" name="companyLocation"><br>
+            <h3>Add Placement Data</h3>
+            <label for="package">Package:</label>
+            <input type="text" id="package" name="package">
+            <h2>Department</h2>
+            <label for="DeptType">Dept Type:</label>
+            <select id="DeptType" name="DeptType">
+                <option>CSE</option>
+                <option>IT</option>
+                <option>AIDS</option>
+                <option>AIML</option>
+                <option>CSBS</option>
+                <option>ECE</option>
+                <option>EEE</option>
+                <option>MECH</option>
+            </select><br>
+
+            <label for="year">Passout Year:</label>
+            <input type="text" id="year" name="year"><br>
+
+            <button type="button" onClick="Submit()">Generate</button>
+        </form><br>
+        <center><table id="data-table">
+            <thead>
+                <tr>
+                    <th>Student Email</th>
+                    <th>Company</th>
+                    <th>Location</th>
+                    <th>Package</th>
+                    <th>Dept</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    <br>
+    <a href="mailto:girimarpu@gmail.com,cc8612346@gmail.com,singareddyprasadreddy3@gmail.com"><button>Send Mail</button></a> </center>
+    </main>
+    <script>
+        function Submit() {
+            const email = document.getElementById('studentEmail').value;
+            const companyName = document.getElementById('companyName').value;
+            const companyLocation = document.getElementById('companyLocation').value;
+            const package = document.getElementById('package').value;
+            const Dept=document.getElementById('DeptType').value;
+
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td>${email}</td>
+                <td>${companyName}</td>
+                <td>${companyLocation}</td>
+                <td>${package}</td>
+                <td>${Dept}</td>
+
+            `;
+            document.getElementById('data-table').getElementsByTagName('tbody')[0].appendChild(newRow);
+
+            document.getElementById('studentName').value = '';
+            document.getElementById('studentEmail').value = '';
+            document.getElementById('companyName').value = '';
+            document.getElementById('companyLocation').value = '';
+            document.getElementById('package').value = '';
+            document.getElementById('DeptType').value = '';
+}
+    
+    </script>
+</body>
+</html>
